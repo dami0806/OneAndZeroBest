@@ -8,4 +8,11 @@ public class ProfileRequestDto {
     private String introduction;
     private String password;
     private String newPassword;
+
+    public ProfileRequestDto(String name, String introduction, String password, String newPassword) {
+        this.name = name;
+        this.introduction = introduction;
+        this.password = password;
+        this.newPassword = newPassword;
+    }
 }
