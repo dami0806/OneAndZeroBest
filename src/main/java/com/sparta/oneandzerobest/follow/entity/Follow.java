@@ -23,32 +23,39 @@ public class Follow extends TimeStamp {
     @JoinColumn(name = "followee_id", nullable = false)
     private User followee; // 팔로우를 당한 사용자
 
+    // follower와 followee가 올바르게 설정되는지 확인
     public Follow(User follower1, User followee) {
         this.follower = follower1;
         this.followee = followee;
     }
 
     // Getter, Setter
+    // ID가 올바르게 반환되는지 확인
     public Long getId() {
         return id;
     }
 
+    // ID가 올바르게 설정되는지 확인
     public void setId(Long id) {
         this.id = id;
     }
 
+    // 팔로워가 올바르게 반환되는지 확인
     public User getFollower() {
         return follower;
     }
 
+    // 팔로워가 올바르게 설정되는지 확인
     public void setFollower(User follower) {
         this.follower = follower;
     }
 
+    // 팔로위가 올바르게 반환되는지 확인
     public User getFollowee() {
         return followee;
     }
 
+    // 팔로위가 올바르게 설정되는지 확인
     public void setFollowee(User followee) {
         this.followee = followee;
     }
