@@ -14,6 +14,7 @@ import java.util.Collections;
 @Entity
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 public class User implements UserDetails { // Spring Security의 UserDetails
     @Id
@@ -58,6 +59,15 @@ public class User implements UserDetails { // Spring Security의 UserDetails
         this.email = email;
         this.statusCode = statusCode;
         this.createdAt = LocalDateTime.now();
+    }
+
+    public User(Long followerId, String follower, String followerPassword, String followerName, String mail, UserStatus userStatus) {
+        this.id = followerId;
+        this.username = follower;
+        this.password = followerPassword;
+        this.name = followerName;
+        this.email = mail;
+        this.statusCode = userStatus;
     }
 
     /**

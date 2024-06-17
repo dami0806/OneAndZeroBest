@@ -33,9 +33,17 @@ public class JwtConfig {
     public long getRefreshTokenExpiration() {
         return refreshTokenExpiration;
     }
+    public JwtConfig() {
+    }
 
+    public JwtConfig(String secretKey, long tokenExpiration, long refreshTokenExpiration) {
+        this.secretKey = secretKey;
+        this.tokenExpiration = tokenExpiration;
+        this.refreshTokenExpiration = refreshTokenExpiration;
+    }
     @PostConstruct
     public void init() {
         JwtUtil.init(this);
     }
+
 }

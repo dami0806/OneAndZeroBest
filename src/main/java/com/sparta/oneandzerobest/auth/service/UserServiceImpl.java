@@ -23,7 +23,10 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class UserServiceImpl implements UserService {
 
+    // Database와 상호작용을 처리
+    // mock객체로 만들어서 데베 사용안하고도 테스트 할수 있게
     private final UserRepository userRepository;
+
     private final PasswordEncoder passwordEncoder;
     private final EmailService emailService;
     private final RedisTemplate<String, String> redisTemplate;
